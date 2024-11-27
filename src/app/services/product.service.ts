@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Response } from '../core/utils/response';
 import { Product } from '../models/product.model';
+import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,10 @@ export class ProductService {
 
   private baseUrl: string = 'http://localhost:8000/api';
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private authService: AuthService,
+  ) { }
 
   getProducts(): Observable<Response> {
     return this.http.get<Response>(`${this.baseUrl}/products`, { headers: this.getHeaders() });
@@ -38,9 +42,13 @@ export class ProductService {
   }
 
   private getHeaders(): HttpHeaders {
+
+    let user = JSON.parse(this.authService.getUser());
+
     return new HttpHeaders({
       'Accept': 'application/json',
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${user.access_token}`,
     });
   }
 }
