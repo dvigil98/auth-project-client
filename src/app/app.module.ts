@@ -18,6 +18,10 @@ import { ProductCreateComponent } from './pages/products/product-create/product-
 import { ProductEditComponent } from './pages/products/product-edit/product-edit.component';
 import { ProductShowComponent } from './pages/products/product-show/product-show.component';
 import { SearchComponent } from './components/search/search.component';
+import { RoleIndexComponent } from './pages/roles/role-index/role-index.component';
+import { RoleCreateComponent } from './pages/roles/role-create/role-create.component';
+import { RoleEditComponent } from './pages/roles/role-edit/role-edit.component';
+import { RoleShowComponent } from './pages/roles/role-show/role-show.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +37,11 @@ import { SearchComponent } from './components/search/search.component';
     ProductCreateComponent,
     ProductEditComponent,
     ProductShowComponent,
-    SearchComponent
+    SearchComponent,
+    RoleIndexComponent,
+    RoleCreateComponent,
+    RoleEditComponent,
+    RoleShowComponent
   ],
   imports: [
     BrowserModule,

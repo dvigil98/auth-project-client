@@ -13,6 +13,10 @@ import { ProductCreateComponent } from './pages/products/product-create/product-
 import { ProductEditComponent } from './pages/products/product-edit/product-edit.component';
 import { ProductShowComponent } from './pages/products/product-show/product-show.component';
 import { authGuard } from './core/guards/auth.guard';
+import { RoleIndexComponent } from './pages/roles/role-index/role-index.component';
+import { RoleCreateComponent } from './pages/roles/role-create/role-create.component';
+import { RoleEditComponent } from './pages/roles/role-edit/role-edit.component';
+import { RoleShowComponent } from './pages/roles/role-show/role-show.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -29,6 +33,10 @@ const routes: Routes = [
       { path: 'products/create', component: ProductCreateComponent, canActivate: [authGuard] },
       { path: 'products/:id/edit', component: ProductEditComponent, canActivate: [authGuard] },
       { path: 'products/:id', component: ProductShowComponent, canActivate: [authGuard] },
+      { path: 'roles', component: RoleIndexComponent, canActivate: [authGuard] },
+      { path: 'roles/create', component: RoleCreateComponent, canActivate: [authGuard] },
+      { path: 'roles/:id/edit', component: RoleEditComponent, canActivate: [authGuard] },
+      { path: 'roles/:id', component: RoleShowComponent, canActivate: [authGuard] },
       { path: '**', redirectTo: 'dashboard' }
     ]
   },
