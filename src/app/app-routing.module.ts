@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { authGuard } from './core/guards/auth.guard';
+
 import { LayoutComponent } from './pages/layout/layout.component';
 import { LoginComponent } from './pages/login/login.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
@@ -12,11 +14,14 @@ import { ProductIndexComponent } from './pages/products/product-index/product-in
 import { ProductCreateComponent } from './pages/products/product-create/product-create.component';
 import { ProductEditComponent } from './pages/products/product-edit/product-edit.component';
 import { ProductShowComponent } from './pages/products/product-show/product-show.component';
-import { authGuard } from './core/guards/auth.guard';
 import { RoleIndexComponent } from './pages/roles/role-index/role-index.component';
 import { RoleCreateComponent } from './pages/roles/role-create/role-create.component';
 import { RoleEditComponent } from './pages/roles/role-edit/role-edit.component';
 import { RoleShowComponent } from './pages/roles/role-show/role-show.component';
+import { UserIndexComponent } from './pages/users/user-index/user-index.component';
+import { UserCreateComponent } from './pages/users/user-create/user-create.component';
+import { UserEditComponent } from './pages/users/user-edit/user-edit.component';
+import { UserShowComponent } from './pages/users/user-show/user-show.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -37,6 +42,10 @@ const routes: Routes = [
       { path: 'roles/create', component: RoleCreateComponent, canActivate: [authGuard] },
       { path: 'roles/:id/edit', component: RoleEditComponent, canActivate: [authGuard] },
       { path: 'roles/:id', component: RoleShowComponent, canActivate: [authGuard] },
+      { path: 'users', component: UserIndexComponent, canActivate: [authGuard] },
+      { path: 'users/create', component: UserCreateComponent, canActivate: [authGuard] },
+      { path: 'users/:id/edit', component: UserEditComponent, canActivate: [authGuard] },
+      { path: 'users/:id', component: UserShowComponent, canActivate: [authGuard] },
       { path: '**', redirectTo: 'dashboard' }
     ]
   },

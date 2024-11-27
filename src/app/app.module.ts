@@ -22,6 +22,10 @@ import { RoleIndexComponent } from './pages/roles/role-index/role-index.componen
 import { RoleCreateComponent } from './pages/roles/role-create/role-create.component';
 import { RoleEditComponent } from './pages/roles/role-edit/role-edit.component';
 import { RoleShowComponent } from './pages/roles/role-show/role-show.component';
+import { UserIndexComponent } from './pages/users/user-index/user-index.component';
+import { UserCreateComponent } from './pages/users/user-create/user-create.component';
+import { UserEditComponent } from './pages/users/user-edit/user-edit.component';
+import { UserShowComponent } from './pages/users/user-show/user-show.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +45,11 @@ import { RoleShowComponent } from './pages/roles/role-show/role-show.component';
     RoleIndexComponent,
     RoleCreateComponent,
     RoleEditComponent,
-    RoleShowComponent
+    RoleShowComponent,
+    UserIndexComponent,
+    UserCreateComponent,
+    UserEditComponent,
+    UserShowComponent
   ],
   imports: [
     BrowserModule,

@@ -10,12 +10,18 @@ import Swal from 'sweetalert2';
 })
 export class LayoutComponent implements OnInit {
 
+  initialLetter: string = '';
+  userName: string = '';
+
   constructor(
     private authService: AuthService,
     private router: Router
   ) { }
 
   ngOnInit(): void {
+    let user = JSON.parse(this.authService.getUser());
+    this.userName = user.user.name;
+    this.initialLetter = this.userName[0];
   }
 
   logout() {
